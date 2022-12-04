@@ -1,0 +1,11 @@
+black
+pytest
+pylint
+wikipedia
+pytest-cov
+fire
+fastapi
+uvicorn
+requests
+pydantic
+Footer
