@@ -1,8 +1,9 @@
 black
 pytest
-pylint==2.15
+pylint
 pytest-cov
 fire
 fastapi
 uvicorn
 requests
+pydantic
