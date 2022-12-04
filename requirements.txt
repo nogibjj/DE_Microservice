@@ -1,11 +1,8 @@
 black
 pytest
-pylint
-wikipedia
+pylint==2.15
 pytest-cov
 fire
 fastapi
 uvicorn
 requests
-pydantic
-Footer
