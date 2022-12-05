@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<style> table {border:1px solid black;} </style>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Root Page</title>
+
+
+</head>
+
+<body>
+    <h2> Hello, this is an api to query info about TikTok! </h2>
+    <h3> Table info summary </h3>
+    <table style="width:100%">
+        <tr>
+            <th> Column name </th>
+            <th> Description </th>
+        </tr>
+        <tr>
+            <th>user_name</th>
+            <th>The name of the user who posted the video. (String)</th>
+        </tr>
+        <tr>
+            <th>user_id</th>
+            <th>The id of the user who posted the video. (Integer)</th>
+        </tr>
+        <tr>
+            <th>video_id</th>
+            <th>The id of the posted video. (Integer)</th>
+        </tr>
+        <tr>
+            <th>video_desc</th>
+            <th>The description of the posted video. (String)</th>
+        </tr>
+        <tr>
+            <th>video_time</th>
+            <th>The posted time of the video. (Integer)</th>
+        </tr>
+        <tr>
+            <th>video_length</th>
+            <th>The length of the posted video. (Integer)</th>
+        </tr>
+        <tr>
+            <th>video_link</th>
+            <th>The link of the posted video. (String)</th>
+        </tr>
+        <tr>
+            <th>n_likes</th>
+            <th>The number of likes the video has received. (Integer)</th>
+        </tr>
+        <tr>
+            <th>n_shares</th>
+            <th>The number of shares the video has received. (Integer)</th>
+        </tr>
+        <tr>
+            <th>n_comments</th>
+            <th>The number of comments the video has received. (Integer)</th>
+        </tr>
+        <tr>
+            <th>n_plays</th>
+            <th>The number of times the video has been played. (Integer)</th>
+        </tr>
+    </table>
+    <br>
+    <h3> Supported APIs </h3>
+    <table style="width:100%">
+        <tr>
+            <th> APIs (URL) </th>
+            <th> Description </th>
+        </tr>
+        <tr>
+            <th>/query/getAuthor</th>
+            <th>retrieve the authors' info given specifications</th>
+        </tr>
+        <tr>
+            <th>/query/getTrendingVideo</th>
+            <th>retrieve the trending videoes' info given predetermined thresholds</th>
+        </tr>
+        <tr>
+            <th>/query/filterVideo</th>
+            <th>retrieve the info of videoes where the contens follow the pattern in description</th>
+        </tr>
+    </table>
+</body>
+
+</html>

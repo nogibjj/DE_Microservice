@@ -3,7 +3,7 @@ from fastapi import FastAPI
 import uvicorn
 from mylib import user_request
 from mylib import tools
-
+from starlette.responses import FileResponse
 
 api = FastAPI()
 db_handle = tools.db_setup()
@@ -12,7 +12,9 @@ db_handle = tools.db_setup()
 @api.get("/")
 async def root():
     """Root page"""
-    return {"message": "Hello, this is an api to query info about World Cup!"}
+    # message = "Hello"
+    # return {"message": message}
+    return FileResponse('index.html')
 
 
 @api.get("/query/getAuthor")

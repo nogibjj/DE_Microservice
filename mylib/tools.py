@@ -34,15 +34,31 @@ def db_setup():
     cur.executemany(insertion, data)
     return cur
 
-
-if __name__ == "__main__":
-    cursor = db_setup()
-    QUERY = "SELECT user_id, user_name\
-         FROM tiktok_video\
-         WHERE n_likes > 10000 OR n_shares > 100000 OR n_comments > 1000 OR n_plays > 100 LIMIT 3;"
-    res = cursor.execute(QUERY).fetchall()
-    for r in res:
-        print(r)
+def get_root_message():
+    ''' Generate root page message '''
+    message = []
+    message.append("Hello, this is an api to query info about TikTok!\n")
+    message.append("Table infor summary\n")
+    message.append(
+        "| Column name | Description                                                          |\n\
+                    |-------------|----------------------------------------------------------------------|\n\
+                    | user_name   | The name of the user who posted the video. (String)                  |\n\
+                    | user_id     | The id of the user who posted the video. (Integer)                   |\n\
+                    | video_id    | The id of the posted video. (Integer)                                |\n\
+                    | video_desc  | The description of the posted video. (String)                        |\n\
+                    | video_time  | The posted time of the video. (Integer)                              |\n\
+                    | video_length| The length of the posted video. (Integer)                            |\n\
+                    | video_link  | The link of the posted video. (String)                               |\n\
+                    | n_likes     | The number of likes the video has received. (Integer)                |\n\
+                    | n_shares    | The number of shares the video has received. (Integer)               |\n\
+                    | n_comments  | The number of comments the video has received. (Integer)             |\n\
+                    | n_plays     | The number of times the video has been played. (Integer) expand_less |\n"
+    )
+    message.append("Supported APIs:\n")
+    message.append("/query/getAuthor: retrieve the authors' info given specifications\n")
+    message.append("/query/getTrendingVideo: retrieve the trending videoes' info given predetermined thresholds\n")
+    message.append("/query/filterVideo: retrieve the info of videoes where the contens follow the pattern in description")
+    return "".join(message)
 
 
 def get_author_query(likes, shares, comments, plays):
@@ -103,3 +119,13 @@ def query_to_str(query_result):
 def gen_response(sql, result_str):
     """Generate API response"""
     return {"sql": sql, "result": result_str}
+
+
+if __name__ == "__main__":
+    cursor = db_setup()
+    QUERY = "SELECT user_id, user_name\
+         FROM tiktok_video\
+         WHERE n_likes > 10000 OR n_shares > 100000 OR n_comments > 1000 OR n_plays > 100 LIMIT 3;"
+    res = cursor.execute(QUERY).fetchall()
+    for r in res:
+        print(r)
