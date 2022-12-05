@@ -34,8 +34,9 @@ def db_setup():
     cur.executemany(insertion, data)
     return cur
 
+
 def get_root_message():
-    ''' Generate root page message '''
+    """Generate root page message"""
     message = []
     message.append("Hello, this is an api to query info about TikTok!\n")
     message.append("Table infor summary\n")
@@ -55,9 +56,15 @@ def get_root_message():
                     | n_plays     | The number of times the video has been played. (Integer) expand_less |\n"
     )
     message.append("Supported APIs:\n")
-    message.append("/query/getAuthor: retrieve the authors' info given specifications\n")
-    message.append("/query/getTrendingVideo: retrieve the trending videoes' info given predetermined thresholds\n")
-    message.append("/query/filterVideo: retrieve the info of videoes where the contens follow the pattern in description")
+    message.append(
+        "/query/getAuthor: retrieve the authors' info given specifications\n"
+    )
+    message.append(
+        "/query/getTrendingVideo: retrieve the trending videoes' info given predetermined thresholds\n"
+    )
+    message.append(
+        "/query/filterVideo: retrieve the info of videoes where the contens follow the pattern in description"
+    )
     return "".join(message)
 
 

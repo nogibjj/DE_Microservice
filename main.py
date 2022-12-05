@@ -14,7 +14,7 @@ async def root():
     """Root page"""
     # message = "Hello"
     # return {"message": message}
-    return FileResponse('index.html')
+    return FileResponse("index.html")
 
 
 @api.get("/query/getAuthor")
